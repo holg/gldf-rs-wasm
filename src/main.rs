@@ -19,7 +19,7 @@ use yew::prelude::*;
 use gldf_rs::gldf::GldfProduct;
 use gldf_rs::{FileBufGldf, BufFile};
 use crate::console::console;
-use yew::prelude::*;
+
 
 struct FileDetails {
     name: String,

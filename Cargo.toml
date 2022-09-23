@@ -11,14 +11,12 @@ edition = "2021"
 [dependencies]
 js-sys = "0.3"
 #yew = { path = "../yew/packages/yew", features = ["csr"]}
-yew =  {version = "0.19", features = ["csr"]}
+yew =  {git = "https://github.com/holg/yew.git", features = ["csr"]}
 base64 = "0.13.0"
 gloo = "0.8"
 #gldf-rs = {path = "../gldf-rs"}
 gldf-rs = {git = "https://github.com/holg/gldf-rs/"}
 
-[lib]
-crate-type = ["cdylib", "rlib"]
 
 [dependencies.web-sys]
 version = "0.3"
