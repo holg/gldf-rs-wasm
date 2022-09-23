@@ -1,0 +1,7 @@
+ name: wasm-pack-action
+  # You may pin to the exact commit or the version.
+  # uses: jetli/wasm-pack-action@f98777369a49686b132a9e8f0fdd59837bf3c3fd
+  uses: jetli/wasm-pack-action@v0.3.0
+  with:
+    # Optional version of wasm-pack to install (eg. "v0.9.1", "latest")
+    version: # optional, default is latest
