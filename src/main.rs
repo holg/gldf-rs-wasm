@@ -199,12 +199,12 @@ fn main() {
 }
 
 
-#[tokio::main(flavor = "current_thread")]
-async fn no_main() {
-    let renderer = ServerRenderer::<App>::new();
-
-    let rendered = renderer.render().await;
-
-    // Prints: <div>Hello, World!</div>
-    println!("{}", rendered);
-}
+// #[tokio::main(flavor = "current_thread")]
+// async fn no_main() {
+//     let renderer = ServerRenderer::<App>::new();
+//
+//     let rendered = renderer.render().await;
+//
+//     // Prints: <div>Hello, World!</div>
+//     println!("{}", rendered);
+// }
