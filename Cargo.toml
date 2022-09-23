@@ -10,7 +10,8 @@ edition = "2021"
 
 [dependencies]
 js-sys = "0.3"
-yew = { path = "../yew/packages/yew", features = ["csr"]}
+#yew = { path = "../yew/packages/yew", features = ["csr"]}
+yew =  {"0.19", features = ["csr"]}
 base64 = "0.13.0"
 gloo = "0.8"
 #gldf-rs = {path = "../gldf-rs"}
