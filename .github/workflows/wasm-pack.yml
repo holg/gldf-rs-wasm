@@ -1,7 +1,21 @@
- name: wasm-pack-action
-  # You may pin to the exact commit or the version.
-  # uses: jetli/wasm-pack-action@f98777369a49686b132a9e8f0fdd59837bf3c3fd
-  uses: jetli/wasm-pack-action@v0.3.0
-  with:
-    # Optional version of wasm-pack to install (eg. "v0.9.1", "latest")
-    version: # optional, default is latest
+name: Build and Test WASM
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: wasm-pack-action
+      uses: jetli/wasm-pack-action@v0.3.0
+      with:
+        version: 'latest'
+
+    # Add other steps as necessary, like building your project, running tests, etc.
