@@ -1,4 +1,5 @@
 [![Rust](https://github.com/holg/gldf-rs-wasm/actions/workflows/rust.yml/badge.svg)](https://github.com/holg/gldf-rs-wasm/actions/workflows/rust.yml)
+[![Build and Test WASM](https://github.com/holg/gldf-rs-wasm/actions/workflows/wasm-pack.yml/badge.svg)](https://github.com/holg/gldf-rs-wasm/actions/workflows/wasm-pack.yml)
 # GLDF-RS-WASM
 
 #### The wasm version of [gldr-rs](https://crates.io/gldr-rs)
