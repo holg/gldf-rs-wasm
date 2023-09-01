@@ -1,9 +1,17 @@
 [package]
 name = "gldf-rs-wasm"
-version = "0.1.0"
+version = "0.2.1"
 authors = ["Holger Trahe <trahe@mac.com>"]
+documentation = "https://github.com/holg/gldf-rs"
+description = "The Webassembly package for the GLDF (General Lighting Data Format) parser and writer for Rust https://crates.io/crates/gldf-rs"
+repository = "https://github.com/holg/gldf-rs-wasm"
+homepage = "https://gldf.icu"
+license = "GPL-3.0-or-later"
 edition = "2021"
 
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 #[features]
 #default = ["console_error_panic_hook"]
@@ -11,15 +19,23 @@ edition = "2021"
 [dependencies]
 js-sys = "0.3"
 #yew = { path = "../yew/packages/yew", features = ["csr"]}
-yew =  {git = "https://github.com/holg/yew.git", features = ["csr"]}
+#yew =  {git = "https://github.com/holg/yew.git", features = ["csr"]}
+# Choose `web-sys`
+yew = { version = "0.20", features = ["csr"] }
+reqwest-wasm = { version = "0.11", features = ["blocking"] }
 base64 = "0.13.0"
 gloo = "0.8"
 #gldf-rs = {path = "../gldf-rs"}
-gldf-rs = {git = "https://github.com/holg/gldf-rs/"}
-
+gldf-rs = "0.2.1"
+wasm-bindgen = "0.2"
+#wasm-bindgen_test = "0.3"
+wasm-bindgen-futures = "0.4"
+#once_cell = "1"
+#wasmer = "1.0.2"
+anyhow = {version = "1.0"}
 
 [dependencies.web-sys]
-version = "0.3"
+version = "0.3.50"
 features = ["File", "DragEvent", "DataTransfer"]
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -32,8 +48,11 @@ features = ["File", "DragEvent", "DataTransfer"]
 # allocator, however.
 #wee_alloc = { version = "0.4.5", optional = true }
 
-#[dev-dependencies]
-#wasm-bindgen-test = "0.3.13"
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[build]
+target = "wasm32-unknown-unknown"
 #
 #[target.'cfg(target_arch = "wasm32")'.dependencies]
 #wasm-bindgen-futures = "0.4"
